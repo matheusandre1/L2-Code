@@ -1,4 +1,5 @@
 import { Injectable } from "@nestjs/common";
+import { AuthInput } from "src/domain/dtos/auth/request/AuthInput";
 import { User } from "src/domain/entities/User";
 
 
@@ -21,7 +22,9 @@ export class UserService{
     ] 
     
     
-    async findUserByName(name: string): Promise<User | undefined>{
-       return this.users.find((user) => user.name === name);
-    }    
+    async findUserByNameAndPassword(user: AuthInput): Promise<User | undefined>{
+       return this.users.find((usermodel) => usermodel.name === user.name && usermodel.password === user.password);
+    }
+    
+    
 }

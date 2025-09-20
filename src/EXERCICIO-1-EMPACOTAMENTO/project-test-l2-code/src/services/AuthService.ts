@@ -15,22 +15,21 @@ export class AuthService{
   
   async validateUser(inputDto: AuthInput) : Promise<SignInData | null>
   { 
-    const user = await this.userService.findUserByName(inputDto.name)
-
-    if(user && user.password === inputDto.password)
+    const user = await this.userService.findUserByNameAndPassword(inputDto)
+    
+    if(!user)
     {
-        return {
-            id: user.id,
-            name: user.name
-        };
+        return null;
     }
 
-    return new SignInData();
+    return { id: user.id, name: user!.name };
+
   }  
 
 
    async authenticate(input: AuthInput) : Promise<AuthResult>
   {
+    
     const user = await this.validateUser(input)
 
     if(!user){

@@ -1,0 +1,43 @@
+# .github/workflows/ci-cd.yaml
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+
+      - name: Build & Test Nest.js
+        run: |
+          cd src/EXERCICIO-1-EMPACOTAMENTO/project-test-l2-code
+          yarn install --frozen-lockfile
+          yarn build
+          yarn test
+        env:
+          JWT_SECRET: ${{ secrets.JWT_SECRET }}
+      
+      - name: Setup Java
+        uses: actions/setup-java@v5
+        with:
+          java-version: '17'
+        env:
+          DB_USERNAME: ${{ secrets.DB_USERNAME }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+
+      - name: Build Java App
+        run: |
+          cd src/EXERCICIO-2-HORARIOS-DE-AULA/exercicio2.horariosDeAula
+          ./mvnw clean package -DskipTests 
+      

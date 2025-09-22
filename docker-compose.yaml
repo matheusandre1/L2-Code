@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:  
+  nest-app:
+    build:
+      context: ./src/EXERCICIO-1-EMPACOTAMENTO/project-test-l2-code
+      dockerfile: Dockerfile
+    container_name: nest-app
+    ports:
+      - "3000:3000"
+    environment:      
+      - JWT_SECRET=${JWT_SECRET}     
+    networks:
+      - app-network
+    restart: unless-stopped
+  
+  java-app:
+    build:
+      context: ./src/EXERCICIO-2-HORARIOS-DE-AULA/exercicio2.horariosDeAula
+      dockerfile: Dockerfile
+    container_name: java-app
+    ports:
+      - "8081:8081"
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+    networks:
+      - app-network
+    restart: unless-stopped
+
+networks:
+  app-network:

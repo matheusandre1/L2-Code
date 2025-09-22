@@ -1,0 +1,10 @@
+# Ignorar variáveis de ambiente
+.env
+
+# Node.js
+node_modules/
+dist/
+
+# Java / Maven
+target/
+*.log

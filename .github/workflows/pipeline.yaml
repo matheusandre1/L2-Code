@@ -24,7 +24,7 @@ jobs:
           cd src/EXERCICIO-1-EMPACOTAMENTO/project-test-l2-code
           yarn install --frozen-lockfile
           yarn build
-          jest src/test
+          yarn test
         env:
           JWT_SECRET: ${{ secrets.JWT_SECRET }}
       

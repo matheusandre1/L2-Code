@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { OrdersController } from '../../controllers/OrdersController';
+import { OrdersController } from 'src/controllers/OrdersController';
 import { CreateOrdersDto } from 'src/domain/dtos/OrdersDto';
 import { OrdersService } from 'src/services/OrderService';
 import { JwtService } from '@nestjs/jwt';

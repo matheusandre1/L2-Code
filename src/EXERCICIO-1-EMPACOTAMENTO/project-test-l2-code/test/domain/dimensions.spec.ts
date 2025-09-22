@@ -1,4 +1,4 @@
-import { Dimensions } from "../../domain/entities/Dimensions";
+import { Dimensions } from "../../src/domain/entities/Dimensions";
 
 describe('Dimensions', () => {
   let dimensions: Dimensions;

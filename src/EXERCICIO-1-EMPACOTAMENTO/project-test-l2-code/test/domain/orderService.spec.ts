@@ -1,8 +1,8 @@
 
-import { OrdersService } from "../../services/OrderService";
+import { OrdersService } from "../../src/services/OrderService";
 import { Test, TestingModule } from '@nestjs/testing';
-import { Product } from "../../domain/entities/Product";
-import { Dimensions } from "../../domain/entities/Dimensions";
+import { Product } from "../../src/domain/entities/Product";
+import { Dimensions } from "../../src/domain/entities/Dimensions";
 
 describe('OrdersService', () => {
   let service: OrdersService;

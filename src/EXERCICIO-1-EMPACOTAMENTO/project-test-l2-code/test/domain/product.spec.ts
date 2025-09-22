@@ -1,6 +1,6 @@
-import { Dimensions } from '../../domain/entities/Dimensions';
-import { Order } from '../../domain/entities/Order';
-import { Product } from '../../domain/entities/Product';
+import { Dimensions } from '../../src/domain/entities/Dimensions';
+import { Order } from '../../src/domain/entities/Order';
+import { Product } from '../../src/domain/entities/Product';
 
 describe('Order', () => {
   let order: Order;

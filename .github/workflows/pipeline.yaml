@@ -40,5 +40,6 @@ jobs:
       - name: Build Java App
         run: |
           cd src/EXERCICIO-2-HORARIOS-DE-AULA/exercicio2.horariosDeAula
-          ./mvnw clean package -DskipTests 
+          ./mvnw clean install -DskipTests
+
       

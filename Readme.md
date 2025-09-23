@@ -14,7 +14,7 @@ Este repositório apresenta a solução para os exercícios de **Empacotamento**
 ### Exercício 2 - Horários de Aula
 
 - **Repositório no GitHub**: [Exercicio2-HorariosDeAula](https://github.com/matheusandre1/Exercicio2-HorariosDeAula)
-- **Deploy da API**: [Swagger UI](https://exercicio2-horariosdeaula-4.onrender.com/swagger-ui/index.html)
+- **Deploy da API**: [Swagger UI](https://exercicio2-horariosdeaula-5.onrender.com/swagger-ui/index.html)
 
 
 ## **Exercício 1 - Empacotamento**
